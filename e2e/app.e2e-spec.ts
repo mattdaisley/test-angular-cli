@@ -7,8 +7,8 @@ describe('test-angular-cli App', function() {
     page = new TestAngularCliPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display message saying Angular CLI Testing', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toEqual('Angular CLI Testing');
   });
 });
