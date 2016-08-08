@@ -15,14 +15,12 @@ import { NavItem } from './nav-item';
 export class SideNavComponent implements OnInit {
   navItems: NavItem[];
 
-  constructor() { }
+  constructor(
+
+  ) { }
 
   ngOnInit() {
     this.navItems = [
-      {
-        route: '/home',
-        title: 'Home'
-      },
       {
         route: '/heroes',
         title: 'Heroes'

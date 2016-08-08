@@ -1,9 +1,11 @@
+
 <div class="nav-wrapper">
-  <toolbar></toolbar>
+  <toolbar [sideNavActive]="sideNavActive" (toggled)="toggled($event)"></toolbar>
 </div>
 
 <div class="main-content-wrapper">
-  <side-nav class="whiteframe"></side-nav>
+  <side-nav class="whiteframe" *ngIf="sideNavActive"></side-nav>
+
   <div class="content">
     <div class="padding">
       <router-outlet></router-outlet>
