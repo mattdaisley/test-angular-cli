@@ -22,16 +22,16 @@ export class SideNavComponent implements OnInit {
   ngOnInit() {
     this.navItems = [
       {
-        route: '/heroes',
-        title: 'Heroes'
+        route: '/users',
+        title: 'Users'
       },
       {
-        route: '/heroes2',
-        title: 'Second Heroes'
+        route: '/users2',
+        title: 'Second Users'
       },
       {
-        route: '/heroes3',
-        title: 'Third Heroes'
+        route: '/users3',
+        title: 'Third Users'
       },
     ]
   }

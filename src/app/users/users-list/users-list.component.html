@@ -1,0 +1,23 @@
+
+<md-card>
+  <md-card-title>My Users...</md-card-title>
+  <md-card-content>
+    <!-- <ul class="users">
+      <li>
+        
+      </li>
+    </ul> -->
+
+    <md-list class="users">
+      <md-list-item *ngFor="let user of users"
+        (click)="selectUser(user)"
+        [class.selected]="selectedUser===user">
+        <p md-line><span class="badge">{{user.id}}</span> {{user.name}}</p>
+
+      </md-list-item>
+    </md-list>
+  </md-card-content>
+  <!-- <md-card-actions align="end">
+    <button md-raised-button color="accent">POST</button>
+  </md-card-actions> -->
+</md-card>

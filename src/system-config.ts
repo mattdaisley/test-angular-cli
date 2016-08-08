@@ -9,7 +9,7 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
-  
+
 };
 
 /** User packages configuration. */
@@ -21,7 +21,8 @@ const materialPkgs:string[] = [
   'core',
   'button',
   'card',
-  'input'
+  'input',
+  'list'
 ];
 
 materialPkgs.forEach((pkg) => {
@@ -47,6 +48,7 @@ const barrels: string[] = [
   '@angular2-material/button',
   '@angular2-material/card',
   '@angular2-material/input',
+  '@angular2-material/list',
 
   // Thirdparty barrels.
   'rxjs',

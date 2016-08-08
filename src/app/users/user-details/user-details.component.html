@@ -1,0 +1,36 @@
+<!-- <div class="details-container">
+  <div class="card">
+    <div class="padding">
+      <h3>User Details</h3>
+      
+      <div *ngIf="User">
+        <div class="input-container"><label>Id:</label> <span>{{User.id}}</span></div>
+        <div class="input-container"><label>Name:</label> <input [(ngModel)]="User.name"></div>
+      </div>
+    </div>
+    <div class="padding">
+      <div class="card-actions">
+        <button (click)="goBack()">Back</button>
+        <button (click)="goBack()">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+ -->
+
+<md-card *ngIf="User">
+  <md-card-title>{{User.name}} Details</md-card-title>
+  <md-card-content>
+    <form>
+      <!-- <div class="input-container"><label>Id:</label> <span>{{User.id}}</span></div> -->
+      <!-- <div class="input-container"><label>Name:</label> <input [(ngModel)]="User.name"></div> -->
+      <md-input placeholder="Id" name="id" [(ngModel)]="User.id" disabled></md-input>
+      <md-input placeholder="Name" name="name" [(ngModel)]="User.name"></md-input>
+    </form>
+  </md-card-content>
+  <md-card-actions align="end">
+    <button md-raised-button (click)="goBack()">Back</button>
+    <button md-raised-button (click)="goBack()">Save</button>
+
+  </md-card-actions>
+</md-card>

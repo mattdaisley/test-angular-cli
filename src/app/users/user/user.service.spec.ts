@@ -1,16 +1,16 @@
 /* tslint:disable:no-unused-variable */
 
 import { addProviders, async, inject } from '@angular/core/testing';
-import { HeroService } from './hero.service';
+import { UserService } from './User.service';
 
-describe('Service: Hero', () => {
+describe('Service: User', () => {
   beforeEach(() => {
-    addProviders([HeroService]);
+    addProviders([UserService]);
   });
 
   it('should ...',
-    inject([HeroService],
-      (service: HeroService) => {
+    inject([UserService],
+      (service: UserService) => {
         expect(service).toBeTruthy();
       }));
 });

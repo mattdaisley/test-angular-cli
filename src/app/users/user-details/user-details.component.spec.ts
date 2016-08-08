@@ -3,13 +3,11 @@
 import { By }           from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { addProviders, async, inject } from '@angular/core/testing';
+import { UserDetailsComponent } from './user-details.component';
 
-import { HeroesListComponent } from './heroes-list.component';
-import { HeroService } from '../hero/index';
-
-describe('Component: HeroesList', () => {
+describe('Component: UserDetails', () => {
   it('should create an instance', () => {
-    // let component = new HeroesListComponent(HeroService);
+    // let component = new UserDetailsComponent();
     // expect(component).toBeTruthy();
   });
 });
