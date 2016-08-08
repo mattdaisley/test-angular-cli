@@ -1,7 +1,12 @@
 
 
-md-card {
-  flex: .5;
+.flex {
+  flex: .33;
+  width: 1px;
+}
+
+.layout {
+  flex-direction: column;
 }
 
 .card-container {
