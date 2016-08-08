@@ -9,13 +9,14 @@ import { User } from './user.model';
 @Injectable()
 export class UserService {
   private usersUrl = 'http://localhost:7768/api/v0.1/users';  // URL to web api
+  private authToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaXNzIjoiaHR0cDovLzEyNy4wLjAuMTo3NzY4IiwicGVybWlzc2lvbnMiOiJzZWxmLGFkbWluIiwiaWF0IjoxNDcwNjk3OTU0LCJleHAiOjE0NzA3MDE1NTR9.40VOIlST9vL6m5Awc912bhYrYoStdG80-K0OlkCq5-s';
 
   constructor(private http: Http) { }
 
   getUsers() : Observable<User[]> {
     let headers = new Headers({  
       'Content-Type': 'application/json',
-      'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaXNzIjoiaHR0cDovLzEyNy4wLjAuMTo3NzY4IiwicGVybWlzc2lvbnMiOiJzZWxmLGFkbWluIiwiaWF0IjoxNDcwNjk0MzI1LCJleHAiOjE0NzA2OTc5MjV9.EmXRxA8dzY5JzhMMPnruf9bIyzqv-cXSHzcGrlrO6pQ',
+      'x-access-token': this.authToken,
      });
     let options = new RequestOptions({ headers: headers });
 
@@ -26,11 +27,11 @@ export class UserService {
   getUser(id: number) : Observable<User> {
     let headers = new Headers({  
       'Content-Type': 'application/json',
-      'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaXNzIjoiaHR0cDovLzEyNy4wLjAuMTo3NzY4IiwicGVybWlzc2lvbnMiOiJzZWxmLGFkbWluIiwiaWF0IjoxNDcwNjk0MzI1LCJleHAiOjE0NzA2OTc5MjV9.EmXRxA8dzY5JzhMMPnruf9bIyzqv-cXSHzcGrlrO6pQ',
+      'x-access-token': this.authToken,
      });
     let options = new RequestOptions({ headers: headers });
     let url = this.usersUrl + '/' + id;
-    
+
     return this.http.get(url, options)
               .map((res: Response) => res.json().users[0] as User);
     // return Observable.create(observer => {

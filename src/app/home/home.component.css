@@ -1,10 +1,10 @@
 
 
 md-card {
-  flex-grow: 1;
+  flex: .5;
 }
 
 .card-container {
-  display: flex;
-  flex-flow: row wrap;
+  /*display: flex;*/
+  /*flex-flow: row wrap;*/
 }

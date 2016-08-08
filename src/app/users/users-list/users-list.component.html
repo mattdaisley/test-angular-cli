@@ -11,9 +11,9 @@
     <md-list class="users">
       <md-list-item *ngFor="let user of users"
         (click)="selectUser(user)"
-        [class.selected]="selectedUser===user">
-        <p md-line><span class="badge">{{user.id}}</span> {{user.name}}</p>
-
+        [class.selected]="selectedUser===user"
+        class="user">
+        <p md-line class="user-row"><span class="badge">{{user.id}}</span> <span>{{user.name}}</span></p>
       </md-list-item>
     </md-list>
   </md-card-content>
