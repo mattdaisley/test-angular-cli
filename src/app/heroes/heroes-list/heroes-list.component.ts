@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
+
 import { Hero, HeroService } from '../hero/index';
 import { HeroDetailsComponent } from '../hero-details/index';
 
@@ -9,7 +11,10 @@ import { HeroDetailsComponent } from '../hero-details/index';
   selector: 'heroes-list',
   templateUrl: 'heroes-list.component.html',
   styleUrls: ['heroes-list.component.css'],
-  directives: [HeroDetailsComponent],
+  directives: [
+    MD_CARD_DIRECTIVES,
+    HeroDetailsComponent
+  ],
   providers: [HeroService]
 })
 

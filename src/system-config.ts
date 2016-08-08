@@ -9,11 +9,24 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
+  
 };
 
 /** User packages configuration. */
 const packages: any = {
 };
+
+// put the names of any of your Material components here
+const materialPkgs:string[] = [
+  'core',
+  'button',
+  'card',
+  'input'
+];
+
+materialPkgs.forEach((pkg) => {
+  packages[`@angular2-material/${pkg}`] = {main: `${pkg}.js`};
+});
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 /***********************************************************************************************
@@ -29,6 +42,11 @@ const barrels: string[] = [
   '@angular/router',
   '@angular/platform-browser',
   '@angular/platform-browser-dynamic',
+
+  '@angular2-material/core',
+  '@angular2-material/button',
+  '@angular2-material/card',
+  '@angular2-material/input',
 
   // Thirdparty barrels.
   'rxjs',
@@ -59,6 +77,7 @@ declare var System: any;
 System.config({
   map: {
     '@angular': 'vendor/@angular',
+    '@angular2-material': 'vendor/@angular2-material',
     'rxjs': 'vendor/rxjs',
     'main': 'main.js'
   },

@@ -4,36 +4,7 @@ h3 {
   text-align: center;
 }
 
-.input-container {
-  display: flex;
-  margin: 16px 8px 0;
-  align-items: center;
-}
 
-.input-container label {
-  width: 100px;
-}
-
-input, span {
-  flex: 1;
-}
-
-.card-actions {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-button {
-  /*flex-grow: 1;*/
-}
-
-.details-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.card {
-  flex: .5;
+md-input {
+  width: 100%;
 }

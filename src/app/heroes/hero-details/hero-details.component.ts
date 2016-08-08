@@ -1,6 +1,10 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
+import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
+import { MdInput } from '@angular2-material/input';
+
 import { Hero, HeroService } from '../hero/index';
 
 @Component({
@@ -8,6 +12,11 @@ import { Hero, HeroService } from '../hero/index';
   selector: 'hero-details',
   templateUrl: 'hero-details.component.html',
   styleUrls: ['hero-details.component.css'],
+  directives: [
+    MD_CARD_DIRECTIVES,
+    MD_BUTTON_DIRECTIVES,
+    MdInput
+  ],
   providers: [HeroService]
 })
 export class HeroDetailsComponent implements OnInit, OnDestroy {

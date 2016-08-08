@@ -150,8 +150,17 @@ side-nav {
   overflow: auto;
 }
 
+home {
+  display: flex;
+}
+
 .padding {
   padding: 16px;
+}
+
+md-card {
+  box-sizing: border-box;
+  margin: 8px;
 }
 
 .card {
