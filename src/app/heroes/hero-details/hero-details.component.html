@@ -1,6 +1,8 @@
 <div class="details-container">
   <div class="card">
     <div class="padding">
+      <h3>Hero Details</h3>
+      
       <div *ngIf="hero">
         <div class="input-container"><label>Id:</label> <span>{{hero.id}}</span></div>
         <div class="input-container"><label>Name:</label> <input [(ngModel)]="hero.name"></div>
