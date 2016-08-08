@@ -3,11 +3,11 @@
 import { By }           from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { addProviders, async, inject } from '@angular/core/testing';
-import { HeroDetailsComponent } from './hero-details.component';
+import { SideNavComponent } from './side-nav.component';
 
-describe('Component: HeroDetails', () => {
+describe('Component: SideNav', () => {
   it('should create an instance', () => {
-    // let component = new HeroDetailsComponent();
+    // let component = new SideNavComponent();
     // expect(component).toBeTruthy();
   });
 });

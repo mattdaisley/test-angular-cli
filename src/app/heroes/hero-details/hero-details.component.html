@@ -1,3 +1,16 @@
-<div *ngIf="hero">
-  {{hero.id}} <input [(ngModel)]="hero.name">
+<div class="details-container">
+  <div class="card">
+    <div class="padding">
+      <div *ngIf="hero">
+        <div class="input-container"><label>Id:</label> <span>{{hero.id}}</span></div>
+        <div class="input-container"><label>Name:</label> <input [(ngModel)]="hero.name"></div>
+      </div>
+    </div>
+    <div class="padding">
+      <div class="card-actions">
+        <button (click)="goBack()">Back</button>
+        <button (click)="goBack()">Save</button>
+      </div>
+    </div>
+  </div>
 </div>

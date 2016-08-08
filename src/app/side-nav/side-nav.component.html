@@ -1,0 +1,9 @@
+<div class="side-nav-container">
+  <div class="list" *ngIf="navItems">
+    <div class="list-item" *ngFor="let item of navItems">
+      <div class="list-item-inner">
+        <a [routerLink]="item.route" routerLinkActive="active">{{item.title}}</a>
+      </div>
+    </div>
+  </div>
+</div>

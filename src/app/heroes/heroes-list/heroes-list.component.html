@@ -1,5 +1,5 @@
-<hero-details [hero]="selectedHero"></hero-details>
-
+<div class="card">
+<div class="padding">
 <ul class="heroes">
   <li *ngFor="let hero of heroes"
     (click)="selectHero(hero)"
@@ -7,3 +7,5 @@
     <span class="badge">{{hero.id}}</span> {{hero.name}}
   </li>
 </ul>
+</div>
+</div>
