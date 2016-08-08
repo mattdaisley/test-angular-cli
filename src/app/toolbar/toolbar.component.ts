@@ -19,7 +19,7 @@ export class ToolbarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
+    this.sideNavActive = true;
   }
 
   toggle() {

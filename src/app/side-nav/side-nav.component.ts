@@ -24,7 +24,15 @@ export class SideNavComponent implements OnInit {
       {
         route: '/heroes',
         title: 'Heroes'
-      }
+      },
+      {
+        route: '/heroes2',
+        title: 'Second Heroes'
+      },
+      {
+        route: '/heroes3',
+        title: 'Third Heroes'
+      },
     ]
   }
 
