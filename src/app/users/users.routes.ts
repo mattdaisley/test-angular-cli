@@ -16,31 +16,5 @@ export const UsersRouterConfig: RouterConfig = [
         component: UserDetailsComponent
       }
     ]
-  },
-  {
-    path: 'users2',
-    children: [
-      {
-        path: '',
-        component: UsersListComponent
-      },
-      {
-        path: ':id',
-        component: UserDetailsComponent
-      }
-    ]
-  },
-  {
-    path: 'users3',
-    children: [
-      {
-        path: '',
-        component: UsersListComponent
-      },
-      {
-        path: ':id',
-        component: UserDetailsComponent
-      }
-    ]
-  },
+  }
 ];

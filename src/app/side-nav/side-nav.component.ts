@@ -26,13 +26,9 @@ export class SideNavComponent implements OnInit {
         title: 'Users'
       },
       {
-        route: '/users2',
-        title: 'Second Users'
-      },
-      {
-        route: '/users3',
-        title: 'Third Users'
-      },
+        route: '/resume',
+        title: 'Resume'
+      }
     ]
   }
 

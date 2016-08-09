@@ -64,6 +64,7 @@ const barrels: string[] = [
   'app/side-nav',
   'app/toolbar/toolbar',
   'app/toolbar',
+  'app/resume',
   /** @cli-barrel */
 ];
 
