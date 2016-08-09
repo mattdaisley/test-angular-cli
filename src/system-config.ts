@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 // SystemJS configuration file, see links for more information
 // https://github.com/systemjs/systemjs
@@ -17,7 +17,7 @@ const packages: any = {
 };
 
 // put the names of any of your Material components here
-const materialPkgs:string[] = [
+const materialPkgs: string[] = [
   'core',
   'button',
   'card',

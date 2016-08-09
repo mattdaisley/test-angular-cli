@@ -11,7 +11,7 @@ import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
   styleUrls: ['resume.component.css'],
   directives: [
     ROUTER_DIRECTIVES,
-    MD_CARD_DIRECTIVES, 
+    MD_CARD_DIRECTIVES,
     MD_BUTTON_DIRECTIVES
   ]
 })

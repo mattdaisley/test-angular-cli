@@ -13,7 +13,7 @@ import { ToolbarComponent } from './toolbar/index';
   styleUrls: ['app.component.css'],
   directives: [
     ROUTER_DIRECTIVES,
-    ToolbarComponent, 
+    ToolbarComponent,
     SideNavComponent
   ]
 })

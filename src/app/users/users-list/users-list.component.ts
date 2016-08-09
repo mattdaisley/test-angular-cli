@@ -25,7 +25,7 @@ export class UsersListComponent implements OnInit {
 
   selectedUser: User;
 
-  constructor( 
+  constructor(
     private UserService: UserService,
     private router: Router
   ) {}

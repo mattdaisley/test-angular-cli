@@ -13,8 +13,8 @@ export class UserService {
 
   constructor(private http: Http) { }
 
-  getUsers() : Observable<User[]> {
-    let headers = new Headers({  
+  getUsers(): Observable<User[]> {
+    let headers = new Headers({
       'Content-Type': 'application/json',
       'x-access-token': this.authToken,
      });
@@ -24,8 +24,8 @@ export class UserService {
               .map((res: Response) => res.json().users as User[]);
   }
 
-  getUser(id: number) : Observable<User> {
-    let headers = new Headers({  
+  getUser(id: number): Observable<User> {
+    let headers = new Headers({
       'Content-Type': 'application/json',
       'x-access-token': this.authToken,
      });

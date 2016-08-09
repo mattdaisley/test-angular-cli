@@ -3,7 +3,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
   moduleId: module.id,
-  selector: 'toolbar',
+  selector: 'toolbar-component',
   templateUrl: 'toolbar.component.html',
   styleUrls: ['toolbar.component.css'],
   directives: [
@@ -13,7 +13,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 export class ToolbarComponent implements OnInit {
   @Input() sideNavActive: boolean;
   @Output() toggled = new EventEmitter<boolean>();
-  
+
   constructor(
 
   ) { }

@@ -29,7 +29,7 @@ export class SideNavComponent implements OnInit {
         route: '/resume',
         title: 'Resume'
       }
-    ]
+    ];
   }
 
 }

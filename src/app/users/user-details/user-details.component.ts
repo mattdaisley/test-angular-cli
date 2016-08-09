@@ -9,9 +9,9 @@ import { User, UserService } from '../user/index';
 
 @Component({
   moduleId: module.id,
-  selector: 'User-details',
-  templateUrl: 'User-details.component.html',
-  styleUrls: ['User-details.component.css'],
+  selector: 'user-details',
+  templateUrl: 'user-details.component.html',
+  styleUrls: ['user-details.component.css'],
   directives: [
     MD_CARD_DIRECTIVES,
     MD_BUTTON_DIRECTIVES,
@@ -20,19 +20,19 @@ import { User, UserService } from '../user/index';
   providers: [UserService]
 })
 export class UserDetailsComponent implements OnInit, OnDestroy {
-  @Input() User: User;
+  @Input() user: User;
   sub: any;
 
   constructor(
     private route: ActivatedRoute,
-    private UserService: UserService
+    private userService: UserService
   ) { }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-      this.UserService.getUser(+params['id'])
-        .subscribe(User => this.User = User);
-    })
+      this.userService.getUser(+params['id'])
+        .subscribe(user => this.user = user);
+    });
   }
 
   ngOnDestroy() {
