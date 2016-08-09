@@ -20,7 +20,7 @@ import { User, UserService } from '../user/index';
   providers: [UserService]
 })
 export class UserDetailsComponent implements OnInit, OnDestroy {
-  @Input() user: User;
+  user: User;
   sub: any;
 
   constructor(
@@ -31,7 +31,7 @@ export class UserDetailsComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       this.userService.getUser(+params['id'])
-        .subscribe(user => this.user = user);
+        .subscribe(user => this.user = user );
     });
   }
 
