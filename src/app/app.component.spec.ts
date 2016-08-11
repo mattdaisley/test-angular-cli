@@ -17,4 +17,17 @@ describe('App: TestAngularCli', () => {
     inject([AppComponent], (app: AppComponent) => {
       expect(app.title).toEqual('Angular CLI Testing');
     }));
+
+  it('sideNavActive should default to true',
+    inject([AppComponent], (app: AppComponent) => {
+      app.ngOnInit();
+      expect(app.sideNavActive).toBeTruthy();
+    }));
+
+  it('should set sideNavActive state to false',
+    inject([AppComponent], (app: AppComponent) => {
+      app.ngOnInit();
+      app.toggled( false );
+      expect(app.sideNavActive).toBeFalsy();
+    }));
 });
