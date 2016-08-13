@@ -13,6 +13,7 @@ if (environment.production) {
   enableProdMode();
 }
 
+// HttpInterceptor implemenation from https://www.illucit.com/blog/2016/03/angular2-http-authentication-interceptor/
 class HttpInterceptor extends Http {
 
   constructor(backend: ConnectionBackend, defaultOptions: RequestOptions, private _router: Router) {
@@ -51,15 +52,14 @@ class HttpInterceptor extends Http {
   }
 
   intercept(observable: Observable<Response>): Observable<Response> {
-    return observable;
-    // return observable.catch((err, source) => {
-    //   if ( err.status  == 401 ) {
-    //     this._router.navigate(['/signin']);
-    //     return Observable.of();
-    //   } else {
-    //     return Observable.throw(err);
-    //   }
-    // });
+    return observable.catch((err, source) => {
+      if ( err.status  == 401 ) {
+        this._router.navigate(['/signin']);
+        return Observable.of();
+      } else {
+        return Observable.throw(err);
+      }
+    });
   }
 }
 
