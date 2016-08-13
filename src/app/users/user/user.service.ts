@@ -9,7 +9,7 @@ import { User } from './user.model';
 @Injectable()
 export class UserService {
   private usersUrl = 'http://localhost:7768/api/v0.1/users';  // URL to web api
-  private authToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaXNzIjoiaHR0cDovLzEyNy4wLjAuMTo3NzY4IiwicGVybWlzc2lvbnMiOiJzZWxmLGFkbWluIiwiaWF0IjoxNDcwNzUyMTUyLCJleHAiOjE0NzA3NTU3NTJ9.YOItJfWftjbAm95nnqZD4j7s8PAG6YQDz0V5hLxYEOI';
+  private authToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaXNzIjoiaHR0cDovLzEyNy4wLjAuMTo3NzY4IiwicGVybWlzc2lvbnMiOiJzZWxmLGFkbWluIiwiaWF0IjoxNDcxMDYwNjI4LCJleHAiOjE0NzEwNjQyMjh9.o1dgnr5sDLrF0r-fwYl4otWUrBsZ0ebBDHOvNCRHgRA';
 
   constructor(private http: Http) { }
 

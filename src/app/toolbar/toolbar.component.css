@@ -12,14 +12,14 @@
   font-weight: 300;
 }
 
-.nav-container a, button {
+.nav-container a.logo, button {
   display: block;
   line-height: 40px;
   border: none;
   border-radius: 4px;
 }
 
-.nav-container a:hover span {
+.nav-container a.logo:hover span {
   color: #444;
 }
 
@@ -49,11 +49,15 @@
   flex: 1;
 }
 
-.nav-container a {
+.nav-container a.logo {
   padding: 8px;
   font-weight: 500;
   width: 100%;
   text-align: right;
   color: #fff;
   align-items: center;
+}
+
+a.auth-button {
+  margin: 8px;
 }

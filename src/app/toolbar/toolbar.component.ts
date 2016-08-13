@@ -1,13 +1,16 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
+import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
+
 @Component({
   moduleId: module.id,
   selector: 'toolbar-component',
   templateUrl: 'toolbar.component.html',
   styleUrls: ['toolbar.component.css'],
   directives: [
-    ROUTER_DIRECTIVES
+    ROUTER_DIRECTIVES,
+    MD_BUTTON_DIRECTIVES
   ]
 })
 export class ToolbarComponent implements OnInit {

@@ -65,6 +65,9 @@ const barrels: string[] = [
   'app/toolbar/toolbar',
   'app/toolbar',
   'app/resume',
+  'app/auth',
+  'app/auth/user-profile',
+  'app/auth/sign-in',
   /** @cli-barrel */
 ];
 

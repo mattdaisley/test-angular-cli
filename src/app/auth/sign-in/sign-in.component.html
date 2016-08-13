@@ -1,0 +1,18 @@
+<div class="flex-container layout-align-center-center layout-row">
+  <div class="flex-50 layout layout-column">
+    <md-card>
+      <md-card-title class="center">Sign In to Your Account</md-card-title>
+      <md-card-content>
+        <form>
+          <md-input placeholder="Email Address" name="email" [(ngModel)]="email"></md-input>
+          <md-input placeholder="Password" name="password" type="password" [(ngModel)]="password"></md-input>
+          <div class="flex-container">
+          <button md-button type="submit" class="flex-50">Sign In</button>
+          <button md-button [routerLink]="'/signup'" class="flex-50">Sign Up</button>
+          </div>
+        </form>
+      </md-card-content>
+    </md-card>
+  </div>
+
+</div>
