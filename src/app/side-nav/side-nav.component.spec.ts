@@ -1,13 +1,21 @@
-/* tslint:disable:no-unused-variable */
 
-import { By }           from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
 import { addProviders, async, inject } from '@angular/core/testing';
 import { SideNavComponent } from './side-nav.component';
 
-describe('Component: SideNav', () => {
-  it('should create an instance', () => {
-    // let component = new SideNavComponent();
-    // expect(component).toBeTruthy();
+describe('SideNavComponent', () => {
+  beforeEach(() => {
+    addProviders([SideNavComponent]);
   });
+
+  it('should create the sideNav',
+    inject([SideNavComponent], (sideNav: SideNavComponent) => {
+      expect(sideNav).toBeTruthy();
+    }));
+
+  it('should have nav items',
+    inject([SideNavComponent], (sideNav: SideNavComponent) => {
+      sideNav.ngOnInit();
+      expect(sideNav.navItems.length > 0).toBeTruthy();
+    }));
+
 });
