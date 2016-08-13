@@ -5,18 +5,21 @@ import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
 
 import { User } from './user.model';
+import { AuthenticateService } from '../../auth';
 
 @Injectable()
 export class UserService {
   private usersUrl = 'http://localhost:7768/api/v0.1/users';  // URL to web api
   private authToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaXNzIjoiaHR0cDovLzEyNy4wLjAuMTo3NzY4IiwicGVybWlzc2lvbnMiOiJzZWxmLGFkbWluIiwiaWF0IjoxNDcxMDYwNjI4LCJleHAiOjE0NzEwNjQyMjh9.o1dgnr5sDLrF0r-fwYl4otWUrBsZ0ebBDHOvNCRHgRA';
 
-  constructor(private http: Http) { }
+  constructor(
+    private http: Http,
+    private authService: AuthenticateService
+  ) { }
 
   buildHeaders(): Headers {
     return new Headers({
-      'Content-Type': 'application/json',
-      'x-access-token': this.authToken,
+      'x-access-token': this.authService.getAuthToken(),
     });
   }
 

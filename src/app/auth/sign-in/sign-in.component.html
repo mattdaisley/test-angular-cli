@@ -3,7 +3,7 @@
     <md-card>
       <md-card-title class="center">Sign In to Your Account</md-card-title>
       <md-card-content>
-        <form>
+        <form (submit)="signIn()">
           <md-input placeholder="Email Address" name="email" [(ngModel)]="email"></md-input>
           <md-input placeholder="Password" name="password" type="password" [(ngModel)]="password"></md-input>
           <div class="flex-container">

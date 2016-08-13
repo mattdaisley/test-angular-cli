@@ -6,6 +6,7 @@ import { MD_LIST_DIRECTIVES } from '@angular2-material/list/list';
 
 import { User, UserService } from '../user/index';
 import { UserDetailsComponent } from '../user-details/index';
+import { AuthenticateService } from '../../auth';
 
 @Component({
   moduleId: module.id,
@@ -17,7 +18,10 @@ import { UserDetailsComponent } from '../user-details/index';
     MD_LIST_DIRECTIVES,
     UserDetailsComponent
   ],
-  providers: [UserService]
+  providers: [
+    UserService,
+    AuthenticateService
+  ]
 })
 
 export class UsersListComponent implements OnInit {

@@ -6,6 +6,7 @@ import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
 import { MdInput } from '@angular2-material/input';
 
 import { User, UserService } from '../user/index';
+import { AuthenticateService } from '../../auth';
 
 @Component({
   moduleId: module.id,
@@ -17,7 +18,10 @@ import { User, UserService } from '../user/index';
     MD_BUTTON_DIRECTIVES,
     MdInput
   ],
-  providers: [UserService]
+  providers: [
+    UserService,
+    AuthenticateService
+  ]
 })
 export class UserDetailsComponent implements OnInit, OnDestroy {
   user: User;
