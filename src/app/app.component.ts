@@ -5,6 +5,7 @@ import './shared/rxjs-extensions';
 
 import { SideNavComponent } from './side-nav/index';
 import { ToolbarComponent } from './toolbar/index';
+import { AuthenticateService } from './auth';
 
 @Component({
   moduleId: module.id,
@@ -15,15 +16,21 @@ import { ToolbarComponent } from './toolbar/index';
     ROUTER_DIRECTIVES,
     ToolbarComponent,
     SideNavComponent
+  ],
+  providers: [
+    AuthenticateService
   ]
 })
 export class AppComponent implements OnInit {
   title = 'Angular CLI Testing';
   sideNavActive: boolean;
+  isLoggedIn: boolean;
 
   constructor(
-
-  ) { }
+    private authService: AuthenticateService
+  ) { 
+    this.isLoggedIn = this.authService.getIsLoggedIn();
+  }
 
   ngOnInit() {
     this.sideNavActive = true;

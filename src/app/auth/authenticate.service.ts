@@ -9,29 +9,29 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class AuthenticateService {
-  private usersUrl: string = 'http://127.0.0.1:7768/api/v0.1/auth/token';  // URL to web api
+  private authUrl: string = 'http://127.0.0.1:7768/api/v0.1/auth/token';  // URL to web api
   private authToken: string;
-  private loggedIn = false;
+  private isLoggedIn = false;
 
   constructor(
     private http: Http,
     private router: Router
   ) {
     this.authToken = localStorage.getItem('auth_token');
-    this.loggedIn = !!this.authToken;
+    this.isLoggedIn = !!this.authToken;
   }
 
   signIn(email, password) {
     let body = JSON.stringify({ email: email, password: password });
-
-    return this.http.put( this.usersUrl, body)
+    this.isLoggedIn = true;
+    console.log('signed in!', this.isLoggedIn);
+    return this.http.put( this.authUrl, body)
               .map((res: Response) => res.json())
               .map(result => {
-                console.log(result);
                 if ( result.success === true ) {
                   localStorage.setItem('auth_token', result.token);
                   this.authToken = result.token;
-                  this.loggedIn = true;
+                  this.isLoggedIn = true;
                   return true;
                 } else {
                   this.router.navigate(['signin']);
@@ -39,9 +39,21 @@ export class AuthenticateService {
               });
   }
 
+  signOut() {
+    localStorage.removeItem('auth_token');
+    this.authToken = null;
+    this.isLoggedIn = false;
+    this.router.navigate(['signin']);
+  }
+
   getAuthToken() {
-    if ( this.loggedIn == false ) this.router.navigate(['signin']);
+    if ( this.isLoggedIn == false ) this.router.navigate(['signin']);
     return this.authToken;
+  }
+
+  getIsLoggedIn() {
+    // console.log('in this call', this.isLoggedIn);
+    return this.isLoggedIn;
   }
 
 }

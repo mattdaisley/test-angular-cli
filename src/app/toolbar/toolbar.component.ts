@@ -3,6 +3,8 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 
 import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
 
+import { AuthenticateService } from '../auth';
+
 @Component({
   moduleId: module.id,
   selector: 'toolbar-component',
@@ -11,14 +13,18 @@ import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
   directives: [
     ROUTER_DIRECTIVES,
     MD_BUTTON_DIRECTIVES
+  ],
+  providers: [
+    AuthenticateService
   ]
 })
 export class ToolbarComponent implements OnInit {
   @Input() sideNavActive: boolean;
+  @Input() isLoggedIn: boolean;
   @Output() toggled = new EventEmitter<boolean>();
 
   constructor(
-
+    private authService: AuthenticateService
   ) { }
 
   ngOnInit() {
@@ -29,5 +35,9 @@ export class ToolbarComponent implements OnInit {
     this.sideNavActive = !this.sideNavActive;
     this.toggled.emit(this.sideNavActive);
   }
+
+  // checkIsLoggedIn() {
+  //   return this.authService.getIsLoggedIn();
+  // }
 
 }
