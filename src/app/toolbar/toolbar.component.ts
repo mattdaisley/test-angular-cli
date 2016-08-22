@@ -12,17 +12,16 @@ import { AuthenticateService } from '../auth';
 })
 export class ToolbarComponent implements OnInit, OnDestroy {
   @Input() sideNavActive: boolean;
-  // @Input() isLoggedIn: boolean;
   @Output() toggled = new EventEmitter<boolean>();
 
   loggedInStatus: boolean;
-  subscription: Subscription;
+  sub: any;
 
   constructor( private authService: AuthenticateService ) { }
 
   ngOnInit() {
     this.sideNavActive = true;
-    this.subscription = this.authService.loggedInStatus$.subscribe(
+    this.sub = this.authService.loggedInStatus$.subscribe(
       loggedInStatus => {this.loggedInStatus = loggedInStatus; console.log('here', loggedInStatus);}
     );
   }
@@ -38,6 +37,6 @@ export class ToolbarComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     // prevent memory leak when component is destroyed
-    this.subscription.unsubscribe();
+    this.sub.unsubscribe();
   }
 }

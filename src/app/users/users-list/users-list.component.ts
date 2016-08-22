@@ -16,12 +16,12 @@ export class UsersListComponent implements OnInit {
   selectedUser: User;
 
   constructor(
-    private UserService: UserService,
+    private userService: UserService,
     private router: Router
   ) {}
 
   ngOnInit() {
-    this.UserService.getUsers()
+    this.userService.getUsers()
       .subscribe(users => this.users = users);
   }
 

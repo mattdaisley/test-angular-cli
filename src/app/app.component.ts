@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import './shared/rxjs-extensions';
 
-import { AuthenticateService } from './auth';
-
 @Component({
   moduleId: module.id,
   selector: 'app-root',
@@ -13,13 +11,8 @@ import { AuthenticateService } from './auth';
 export class AppComponent implements OnInit {
   title = 'Angular CLI Testing';
   sideNavActive: boolean;
-  // isLoggedIn: boolean;
 
-  constructor(
-    private authService: AuthenticateService
-  ) { 
-    // this.isLoggedIn = this.authService.getIsLoggedIn();
-  }
+  constructor( ) { }
 
   ngOnInit() {
     this.sideNavActive = true;
