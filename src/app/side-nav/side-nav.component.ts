@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
 
 import { NavItem } from './nav-item';
 
@@ -7,10 +6,7 @@ import { NavItem } from './nav-item';
   moduleId: module.id,
   selector: 'side-nav',
   templateUrl: 'side-nav.component.html',
-  styleUrls: ['side-nav.component.css'],
-  directives: [
-    ROUTER_DIRECTIVES
-  ]
+  styleUrls: ['side-nav.component.css']
 })
 export class SideNavComponent implements OnInit {
   navItems: NavItem[];

@@ -10,12 +10,11 @@
     <div class="menu">
       <button (click)="toggle()"><i class="fa fa-bars" aria-hidden="true"></i></button>
     </div>
-    {{isLoggedIn}}
   </div>
-  <div *ngIf="isLoggedIn == false">
+  <div *ngIf="loggedInStatus == false">
     <a [routerLink]="'/signin'" routerLinkActive="active" md-button class="auth-button">Sign In</a>
   </div>
-  <div *ngIf="isLoggedIn == true">
+  <div *ngIf="loggedInStatus == true">
     <a (click)="authService.signOut()" md-button class="auth-button">Sign Out</a>
   </div>
 </div>

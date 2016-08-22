@@ -23,6 +23,11 @@ import { UsersListComponent } from './users/users-list/index';
 import { UserDetailsComponent } from './users/user-details/index';
 import { ResumeComponent } from './resume/resume.component';
 import { SignInComponent } from './auth/sign-in';
+import { SideNavComponent } from './side-nav/index';
+import { ToolbarComponent } from './toolbar/index';
+
+import { UserService } from './users/user/index';
+import { AuthenticateService } from './auth';
 
 if (environment.production) {
   enableProdMode();
@@ -85,7 +90,9 @@ class HttpInterceptor extends Http {
     UsersListComponent,
     UserDetailsComponent,
     ResumeComponent,
-    SignInComponent
+    SignInComponent,
+    SideNavComponent,
+    ToolbarComponent
   ],
   providers: [
     appRouterProviders,
@@ -94,7 +101,9 @@ class HttpInterceptor extends Http {
       // useFactory: (xhrBackend: XHRBackend, requestOptions: RequestOptions, router: RouterModule) => new HttpInterceptor(xhrBackend, requestOptions, router),
       useFactory: (xhrBackend: XHRBackend, requestOptions: RequestOptions, router: Router) => new HttpInterceptor(xhrBackend, requestOptions, router),
       deps: [XHRBackend, RequestOptions, RouterModule]
-    })
+    }),
+    UserService,
+    AuthenticateService
   ],
   imports:      [
     BrowserModule,

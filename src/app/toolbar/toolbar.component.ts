@@ -1,7 +1,6 @@
-import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
+import { Component, Input, Output, EventEmitter, OnInit, OnDestroy } from '@angular/core';
 
-import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
+import { Subscription } from 'rxjs/Subscription';
 
 import { AuthenticateService } from '../auth';
 
@@ -9,26 +8,23 @@ import { AuthenticateService } from '../auth';
   moduleId: module.id,
   selector: 'toolbar-component',
   templateUrl: 'toolbar.component.html',
-  styleUrls: ['toolbar.component.css'],
-  directives: [
-    ROUTER_DIRECTIVES,
-    MD_BUTTON_DIRECTIVES
-  ],
-  providers: [
-    AuthenticateService
-  ]
+  styleUrls: ['toolbar.component.css']
 })
-export class ToolbarComponent implements OnInit {
+export class ToolbarComponent implements OnInit, OnDestroy {
   @Input() sideNavActive: boolean;
-  @Input() isLoggedIn: boolean;
+  // @Input() isLoggedIn: boolean;
   @Output() toggled = new EventEmitter<boolean>();
 
-  constructor(
-    private authService: AuthenticateService
-  ) { }
+  loggedInStatus: boolean;
+  subscription: Subscription;
+
+  constructor( private authService: AuthenticateService ) { }
 
   ngOnInit() {
     this.sideNavActive = true;
+    this.subscription = this.authService.loggedInStatus$.subscribe(
+      loggedInStatus => {this.loggedInStatus = loggedInStatus; console.log('here', loggedInStatus);}
+    );
   }
 
   toggle() {
@@ -40,4 +36,8 @@ export class ToolbarComponent implements OnInit {
   //   return this.authService.getIsLoggedIn();
   // }
 
+  ngOnDestroy() {
+    // prevent memory leak when component is destroyed
+    this.subscription.unsubscribe();
+  }
 }
